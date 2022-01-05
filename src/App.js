@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/index.scss';
+import "react-toggle/style.css"
+import Toggle from 'react-toggle';
+import { useState, useEffect } from 'react';
+import { useMediaQuery } from "react-responsive";
+
+const DARK_CLASS = "dark";
 
 function App() {
+  const systemPrefersDark = useMediaQuery(
+    {
+      query: "(prefers-color-scheme: dark)"
+    },
+    undefined,
+    prefersDark => {
+      setIsDark(prefersDark);
+    }
+  )
+
+  const [ isDark, setIsDark ] = useState(systemPrefersDark);
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add(DARK_CLASS)
+    } else {
+      document.documentElement.classList.remove(DARK_CLASS)
+    }
+  }, [isDark]);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="title">hello</h1>
+      <Toggle
+          className="DarkToggle"
+          checked={isDark}
+          onChange={event => setIsDark(event.target.checked)}
+          icons={{ checked: "🌙", unchecked: "🔆" }}
+          aria-label="Dark mode"
+        />
+    </>
   );
 }
 

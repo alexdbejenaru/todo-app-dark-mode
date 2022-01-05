@@ -1,0 +1,11 @@
+@use '../utils' as *;
+
+.title {
+  background: var(--primary-bg-color);
+  color: var(--primary-txt-color);
+}
+
+.DarkToggle {
+  margin-top: rem(25px);
+}
+

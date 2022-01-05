@@ -1,0 +1,11 @@
+@mixin whenDark {
+    html.dark & {
+      @content;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      & {
+        @content;
+      }
+    }
+  }
