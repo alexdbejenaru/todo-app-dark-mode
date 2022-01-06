@@ -6,6 +6,7 @@
     @include mixin.flexCenter;
     z-index: 10;
     background-color: var(--todo-list-bg);
+    min-height: 20rem;
     padding: 2rem;
     border-radius: 25px;
 
@@ -16,7 +17,7 @@
 
     .todo-row {
         width: 100%;
-        background-color: var(--primary-bg-color);
+        background-color: var(--todo-button-bg);
         border-radius: 10px;
         color: var(--primary-txt-color);
         padding: .5rem;
@@ -48,12 +49,19 @@
                 padding: 10px;
                 width: 70%;
                 border-radius: 10px 0 0 10px;
+                border: none;
+            }
+
+            .input_update {
+                margin-top: 1rem;
             }
             
             &__button {
                 width: 30%;
                 padding: 10px;
                 border-radius: 0 10px 10px 0;
+                background-color: var(--todo-button-bg);
+                border: none;
             }
         }
     }
