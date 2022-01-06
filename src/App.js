@@ -7,9 +7,10 @@ function App() {
   return (
     <>
     <main className="app">
+      <div className="bg-img"></div>
       <div className="container">
-      <Header />
-      <TodoList />
+        <Header />
+        <TodoList />
 
       </div>
     </main>

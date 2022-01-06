@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
-const TodoForm = ( { onSubmit } ) => {
-    const [ input, setInput ] = useState('');
+const TodoForm = props => {
+    const [ input, setInput ] = useState(props.edit ? props.edit.value : '');
     
     const focus = useRef(null);
     
@@ -16,7 +16,7 @@ const TodoForm = ( { onSubmit } ) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        onSubmit({
+        props.onSubmit({
             id: Math.floor(Math.random() * 10000),
             text: input
         })
@@ -27,8 +27,17 @@ const TodoForm = ( { onSubmit } ) => {
         <>
         <section className="todo">
             <form onSubmit={ handleSubmit } className="todo_form">
-                <input onChange={ handleChange } ref={ focus } type="text" placeholder="Add a to do" value={ input } name='text' className="todo_form__input" />
-                <button className="todo_form__button">Add to do</button>
+                { props.edit ? (
+                    <>
+                        <input onChange={ handleChange } ref={ focus } type="text" placeholder="Update your item" value={ input } name='text' className="todo_form__input input_update" />
+                        <button className="todo_form__button button_update">Update</button>
+                    </>
+                ) : ( 
+                <>
+                    <input onChange={ handleChange } ref={ focus } type="text" placeholder="Add a to do" value={ input } name='text' className="todo_form__input" />
+                    <button className="todo_form__button">Add</button>
+                </>
+                )}
             </form>
         </section>
         </>
