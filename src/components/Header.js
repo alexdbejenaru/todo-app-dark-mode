@@ -27,7 +27,7 @@ const Header = () => {
 
     return ( 
         <>
-          <section className="header-container">
+          <section className={ isDark ? "header-container bgDark" : "header-container"}>
               <h1 className="title">TO DO</h1>
               <Toggle
                   className="DarkToggle"

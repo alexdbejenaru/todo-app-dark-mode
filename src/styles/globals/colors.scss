@@ -2,10 +2,12 @@
     // Light Mode Colors
     --primary-bg-color: rgb(163, 125, 125);
     --primary-txt-color: rgb(129, 45, 45);
+    --todo-list-bg: #292955;
 }
 
 :root.dark {
     --primary-bg-color: #000;
     --primary-txt-color: #fff;
+    --todo-list-bg: #bcbce7;
 }
 
