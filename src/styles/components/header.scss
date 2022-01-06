@@ -1,0 +1,15 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+
+    .title {
+        background: var(--primary-bg-color);
+        color: var(--primary-txt-color);
+      }
+      
+      .DarkToggle {
+        margin: rem(25px) 0 0 rem(25px);
+        height: 33px;
+      }
+}

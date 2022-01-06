@@ -7,3 +7,9 @@ $html-font-size: 16px;
 @function rem($pxValue) {
     @return #{calc(stripUnit($pxValue) / stripUnit($html-font-size))}rem;
 }
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

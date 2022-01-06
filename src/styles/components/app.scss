@@ -1,11 +1,14 @@
 @use '../utils' as *;
 
-.title {
-  background: var(--primary-bg-color);
-  color: var(--primary-txt-color);
-}
+.app {
+  @include flex-center;
+  min-height: 100vh;
+  min-width: 100vw;
 
-.DarkToggle {
-  margin-top: rem(25px);
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
 }
-
