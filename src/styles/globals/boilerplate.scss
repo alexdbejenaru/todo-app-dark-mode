@@ -62,3 +62,7 @@ ol[class] {
 input, button {
     font-family: var(--font-general);
 }
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}

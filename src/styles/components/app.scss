@@ -1,8 +1,7 @@
 @use '../utils' as *;
-@use '../utils/functions.scss'  as mixin;
 
 .app {
-  @include mixin.flexCenter;
+  @include flexCenter;
   min-height: 100vh;
   min-width: 100vw;
 

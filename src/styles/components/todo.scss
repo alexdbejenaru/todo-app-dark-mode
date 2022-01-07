@@ -48,6 +48,7 @@
             &__input {
                 padding: 10px;
                 width: 70%;
+                height: 3rem;
                 border-radius: 10px 0 0 10px;
                 border: none;
             }
@@ -60,8 +61,15 @@
                 width: 30%;
                 padding: 10px;
                 border-radius: 0 10px 10px 0;
+                height: 3rem;
                 background-color: var(--todo-button-bg);
+                color: var(--primary-txt-color);
                 border: none;
+
+                &:hover {
+                    cursor: pointer;
+                    transform: translateX(5px);
+                }
             }
         }
     }
