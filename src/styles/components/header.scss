@@ -22,8 +22,21 @@
         border: none;
         color: black;
 
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+          transition: transform 1s;
+
+          &:hover {
+            color: lighten(black,20%);
+          }
+        }
+
         .dark & {
           color: white;
+          &:hover {
+            color: darken(white,20%);
+          }
         }
 
         .mode-icons {
