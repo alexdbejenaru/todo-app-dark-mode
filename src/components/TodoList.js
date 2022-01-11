@@ -3,7 +3,6 @@ import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
 const TodoList = () => {
-    // const savedItems = JSON.parse(localStorage.getItem('todos'));
     const [ todos, setTodos ] = useState([]);
 
     useEffect(() => {

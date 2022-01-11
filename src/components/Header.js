@@ -1,6 +1,7 @@
-import Toggle from 'react-toggle';
+// import Toggle from 'react-toggle';
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from "react-responsive";
+import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md';
 
 const DARK_CLASS = "dark";
 
@@ -14,28 +15,32 @@ const Header = () => {
           setIsDark(prefersDark);
         }
       )
+
+      const [ isDark, setIsDark ] = useState(systemPrefersDark ? 'dark' : 'light');
       
-    const [ isDark, setIsDark ] = useState(systemPrefersDark);
+      function getDefaultMode() {
+        const savedMode = localStorage.getItem('mode');
+        return savedMode ? savedMode : isDark;
+      }
+
+      const [ mode, setMode ] = useState(getDefaultMode());
+
 
     useEffect(() => {
-      if (isDark) {
+      if (mode === 'dark') {
         document.documentElement.classList.add(DARK_CLASS)
       } else {
         document.documentElement.classList.remove(DARK_CLASS)
       }
-    }, [isDark]);
+      localStorage.setItem('mode', mode);
+    }, [mode]);
 
     return ( 
         <>
-          <section className={ isDark ? "header-container bgDark" : "header-container"}>
+          <section className={ mode === 'dark' ? "header-container bgDark" : "header-container"}>
               <h1 className="title">TO DO</h1>
-              <Toggle
-                  className="DarkToggle"
-                  checked={isDark}
-                  onChange={event => setIsDark(event.target.checked)}
-                  icons={{ checked: "🌙", unchecked: "🔆" }}
-                  aria-label="Dark mode"
-              />
+              
+              <button className="DarkToggle" onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}>{mode === 'dark' ? <MdOutlineLightMode className="mode-icons"/> : <MdDarkMode className="mode-icons"/>}</button>
           </section>
         </>
      );

@@ -17,6 +17,16 @@
       .DarkToggle {
         margin: rem(25px) 0 0 rem(25px);
         height: 35px;
+        width: 35px;
+        background-color: transparent;
+        border: none;
+        color: white;
+
+        .mode-icons {
+          height: 25px;
+          width: 25px;
+          transition-duration: 4s;
+        }
       }
 }
 
