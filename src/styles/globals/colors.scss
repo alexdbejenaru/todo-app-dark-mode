@@ -1,13 +1,13 @@
 :root {
     // Light Mode Colors
-    --primary-bg-color: rgb(163, 125, 125);
+    --primary-bg-color: #a8a8f3;
     --primary-txt-color: rgb(129, 45, 45);
     --todo-list-bg: #292955;
     --todo-button-bg: #bcbce7;
 }
 
 :root.dark {
-    --primary-bg-color: #000;
+    --primary-bg-color: #14142b;
     --primary-txt-color: #fff;
     --todo-list-bg: #bcbce7;
     --todo-button-bg: #292955;

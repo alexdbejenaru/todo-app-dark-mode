@@ -4,6 +4,7 @@
   @include flexCenter;
   min-height: 100vh;
   min-width: 100vw;
+  background-color: var(--primary-bg-color);
 
   .container {
     display: flex;
